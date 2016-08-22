@@ -8,10 +8,10 @@
 3. 本地图片的选择
 
 ## 引用：
-对应的js:src/plugin/uploaderify/webuploader.js
-对应的js:src/plugin/uploaderify/uploadModal.js
-对应的css:style/css/upload.css
-对应的模板:common/templates/nav_render.html
+* 对应的js:src/plugin/uploaderify/webuploader.js
+* 对应的js:src/plugin/uploaderify/uploadModal.js
+* 对应的css:style/css/upload.css
+* 对应的模板:common/templates/nav_render.html
 
 ## 方法调用：
 ```ruby
