@@ -1,15 +1,18 @@
 # uploader
 自身使用的图片上传插件
+
 基于jquery。
 ## 主要功能：
 1. 实现本地图片的上传功能
 2. 实现网络的图片的上传功能
 3. 本地图片的选择
-## 引用:
+
+## 引用：
 对应的js:src/plugin/uploaderify/webuploader.js
 对应的js:src/plugin/uploaderify/uploadModal.js
 对应的css:style/css/upload.css
 对应的模板:common/templates/nav_render.html
+
 ## 方法调用：
 ```ruby
 $('*').imgModal({});
