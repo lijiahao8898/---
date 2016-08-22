@@ -1,12 +1,13 @@
 # uploader
 自身使用的图片上传插件
 基于jquery。
-主要功能：
+## 主要功能：
 1.实现本地图片的上传功能
 2.实现网络的图片的上传功能
-方法调用：
+3.本地图片的选择
+## 方法调用：
 $('*').imgModal({});
-传参：
+## 传参：
 selectImgPopupBtn                     // 图片选择 弹框的按钮
 selectImgBtn                          // 图片选择 的按钮
 selectImgPopupTemplate                // 图片选择 渲染的模板
