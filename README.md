@@ -5,6 +5,11 @@
 1. 实现本地图片的上传功能
 2. 实现网络的图片的上传功能
 3. 本地图片的选择
+## 引用:
+对应的js:src/plugin/uploaderify/webuploader.js
+对应的js:src/plugin/uploaderify/uploadModal.js
+对应的css:style/css/upload.css
+对应的模板:common/templates/nav_render.html
 ## 方法调用：
 ```ruby
 $('*').imgModal({});
@@ -28,3 +33,4 @@ uploadSuccess:function(item,target){} // 图片上传 上传成功的回调函�
 ###小记——将来需要修改的地方
 1. 上传接口的自定义: uploaderUrl
 2. 上传参数的自定义: uploaderData{}
+3. 代码优化
