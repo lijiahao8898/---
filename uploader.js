@@ -1,6 +1,3 @@
-/**
- * Created by lijiahao on 16/8/22.
- */
 ;(function($, cobra, window, document){
 
     // 定义构造函数
@@ -287,8 +284,8 @@
                 // 只允许选择文件，可选。
                 accept: {
                     title: 'Images',
-                    extensions: 'gif,jpg,jpeg,bmp,png',
-                    mimeTypes: 'image/*'
+                    extensions: 'gif,jpg,jpeg,png',
+                    mimeTypes: 'image/jpg,image/jpeg,image/png,image/gif'
                 },
                 // 配置生成缩略图的选项。
                 thumb:{
@@ -309,8 +306,8 @@
                     type: ''
                 },
                 fileNumLimit: 5,                   // 规定图片上传的张数 验证文件总数量, 超出则不允许加入队列。
-                fileSizeLimit: 5 * 1024 * 1024,    // 200 M 验证文件总大小是否超出限制, 超出则不允许加入队列
-                fileSingleSizeLimit: 5* 1024 *1024 // 验证单个文件大小是否超出限制, 超出则不允许加入队列。
+                fileSizeLimit: 1024 * 5 * 1024,    // 200 M 验证文件总大小是否超出限制, 超出则不允许加入队列
+                fileSingleSizeLimit: 1024 * 1024 // 验证单个文件大小是否超出限制, 超出则不允许加入队列。
             });
             this.uploadImgFunc($,uploader);
             this.importImgFunc($);
@@ -446,10 +443,14 @@
             });
 
             // 当有文件添加前触发
-            uploader.on('beforeFileQueued', function(){
+            uploader.on('beforeFileQueued', function(file){
                 var img = $('.filelist li');
 
                 if(!that.validateTimes(img)){
+                    return false;
+                }
+                if( file.size > 1048576 ){
+                    cobra._msgBox.error('当前图片的大小约为'+((file.size/1024)/1024).toFixed(2)+'MB,超出了单张上传最大为1M的限制 ！');
                     return false;
                 }
             });
@@ -506,7 +507,7 @@
                 }
 
                 if ( state === 'uploading' ) {
-                    $btn.text('暂停上传');
+                    $btn.text('开始上传');
                 } else {
                     $btn.text('开始上传');
                 }
