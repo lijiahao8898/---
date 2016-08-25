@@ -14,7 +14,7 @@
 * 对应的模板:common/templates/nav_render.html
 
 ## 方法调用：
-```ruby
+```
 $('*').imgModal({});
 ```
 ## 传参：
