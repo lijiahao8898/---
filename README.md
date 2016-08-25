@@ -18,7 +18,7 @@
 $('*').imgModal({});
 ```
 ## 传参：
-```ruby
+```
 selectImgPopupBtn                     // 图片选择 弹框的按钮
 selectImgBtn                          // 图片选择 的按钮
 selectImgPopupTemplate                // 图片选择 渲染的模板
