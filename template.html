@@ -1,0 +1,51 @@
+<!-- 图片上传模板 -->
+<script type="text/template" id="j-upload-tpl">
+    <div class="popup-upload">
+        <div class="form-inline">
+            <div class="form-group">
+                <label>网络图片：</label>
+                <input class="form-control j-import-img" type="text" placeholder="http://">
+                <a class="btn btn-success j-import">提取</a>
+            </div>
+            <div class="line"></div>
+            <div class="form-group">
+                <label>待上传图片：</label>
+                <div id="bndArea">
+                    <div id="theList" class="clearfix">
+                        <div class="queueList filled clearfix">
+                            <ul class="filelist clearfix"></ul>
+                        </div>
+                    </div>
+                    <div id="picker">
+                        <p>本地图片</p>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+        </div>
+        <div class="upload-footer">
+            <button class="btn btn-sm btn-success imgModalUpload" style="margin-right: 15px;">确定</button>
+            <button class="btn btn-sm btn-default imgModalCancel">取消</button>
+        </div>
+    </div>
+</script>
+
+<!-- 图片选择模板 -->
+<script type="text/template" id="j-select-img-tpl">
+    <% if( items.length > 0 ){ %>
+    <% _.each(items,function(item,index){ %>
+    <tr>
+        <td class="tc"><a class="j-blank-link" target="_blank" href="<%= item.file_url %>"><img style="width: 60px;height: 60px;" src="<%= item.file_url %>"></a></td>
+        <td><%= item.file_name %></td>
+        <td class="j-time tc"><%= item.create_time %></td>
+        <td class="tc">
+            <a href="javascript:;" class="j-select-img tc" data-furl="<%= item.file_url %>">选择</a>
+        </td>
+    </tr>
+    <% }) %>
+    <% }else{ %>
+    <tr>
+        <td class="tc" colspan="18">没有任何记录~</td>
+    </tr>
+    <% } %>
+</script>
