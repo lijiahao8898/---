@@ -3,36 +3,40 @@
     // 定义构造函数
     var SelectImg = function (ele, opt) {
 
-        var content = '<div class="form-inline mb10 tr"><div class="form-group">' +
-                '<div class="input-group">' +
-                '<input class="form-control form-control-lg" id="imgUploadModalKeywords">' +
-                '<span class="input-group-addon btn-success" style="color:#fff;" id="imgUploadModalSearch">搜索</span>' +
-                '</div>' +
-                '</div></div>' +
-                '<div class="ui-box" style="overflow: scroll;height: 450px;">' +
-                '<table class="table ui-table table-striped jambo_table bulk_action">' +
-                '<thead>' +
-                '<tr>' +
-                '<th class="tc">图片</th>' +
-                '<th>名称</th>' +
-                '<th class="tc">时间</th>' +
-                '<th class="tc">操作</th>' +
-                '</tr>' +
-                '</thead>' +
-                '<tbody class="imgList">' +
-                '</tbody>' +
-                '</table></div>' +
-                '<div class="ui-box">' +
-                '<div class="ui-box" style="position: absolute;bottom: 25px;right: 10px;">' +
-                '<div class="widget-list">' +
-                '<div>' +
-                '</div>' +
-                '<div class="list-page">' +
-                '<div class="ui-pagination imgUploadPagination"></div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>',
+        var content = '<div id="WebImageUploader">' +
+                            '<div class="form-inline mb10 tr">' +
+                                '<div class="form-group">' +
+                                    '<div class="input-group">' +
+                                        '<input class="form-control form-control-lg" id="imgUploadModalKeywords">' +
+                                        '<span class="input-group-addon btn-success btn btn-sm" style="color:#fff;" id="imgUploadModalSearch">搜索</span>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="ui-box web-img-uploader-wrapper">' +
+                                '<table class="table ui-table table-striped jambo_table bulk_action">' +
+                                    '<thead>' +
+                                        '<tr>' +
+                                            '<th class="tc">图片</th>' +
+                                            '<th>名称</th>' +
+                                            '<th class="tc">时间</th>' +
+                                            '<th class="tc">操作</th>' +
+                                        '</tr>' +
+                                    '</thead>' +
+                                    '<tbody class="imgList"></tbody>' +
+                                '</table>' +
+                            '</div>' +
+                            '<div class="ui-box">' +
+                                '<div class="ui-box" style="position: absolute;bottom: 25px;right: 10px;">' +
+                                    '<div class="widget-list">' +
+                                        '<div>' +
+                                        '</div>' +
+                                    '<div class="list-page">' +
+                                        '<div class="ui-pagination imgUploadPagination"></div>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>',
             title = '图片库&nbsp;-&nbsp;<a href="javascript:;" class="uploadModuleNew">新图片</a>';
         this.$element = ele;
         this.defaults = {
@@ -236,7 +240,7 @@
             this.popupImgSelectModuleDialog = jDialog.dialog({
                 title: that.options.selectImgPopupTitle,
                 content: that.options.selectImgPopupTemplate,
-                width: 800,
+                width: 600,
                 height: 600,
                 draggable: false
             });
